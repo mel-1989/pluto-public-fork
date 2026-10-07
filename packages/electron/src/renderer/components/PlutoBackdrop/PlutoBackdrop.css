@@ -1,0 +1,32 @@
+/* Shown only under Pluto's Purple Matrix theme; other themes stay untouched. */
+.pluto-backdrop {
+  display: none;
+}
+
+[data-theme='pluto-purple-matrix'] .pluto-backdrop {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  container-type: size;
+  mix-blend-mode: screen;
+  opacity: 0.2;
+}
+
+/* 50 rows x 110 cols (see planetArt.ts). Size the glyphs so the whole planet
+   fits the pane: line-height 1 gives rows = font-size, and a monospace glyph
+   is ~0.6em wide. */
+.pluto-backdrop-art {
+  margin: 0;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  line-height: 1;
+  font-size: min(calc(92cqh / 50), calc(92cqw / (110 * 0.6)));
+  color: var(--nim-primary);
+  text-shadow: 0 0 0.6em var(--nim-primary);
+  white-space: pre;
+}

@@ -22,6 +22,7 @@ import { getExtensionLoader } from '@nimbalyst/runtime';
 import { customEditorRegistry } from '../CustomEditors';
 import { WorkspaceSidebar } from '../WorkspaceSidebar';
 import { WorkspaceWelcome, type WelcomeFileQuickPick } from '../WorkspaceWelcome';
+import { PlutoBackdrop } from '../PlutoBackdrop/PlutoBackdrop';
 import { TabManager } from '../TabManager/TabManager';
 import { TabContent } from '../TabContent/TabContent';
 import { ChatSidebar, type ChatSidebarRef } from '../ChatSidebar';
@@ -1372,7 +1373,8 @@ const EditorMode = forwardRef<EditorModeRef, EditorModeProps>(function EditorMod
         )}
 
         {/* Center - editor tabs and content */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', minWidth: 0 }}>
+        <div className="editor-mode-center" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', minWidth: 0, position: 'relative' }}>
+          <PlutoBackdrop />
           {/* Always render both - visibility controlled imperatively via refs */}
           <div
             ref={tabsContainerRef}

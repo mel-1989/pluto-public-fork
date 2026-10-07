@@ -714,7 +714,12 @@ function getAppStore(): Store<AppStoreSchema> {
         name: 'app-settings',
         clearInvalidConfig: true,
         defaults: {
-          theme: 'system',
+          // Pluto ships Purple Matrix as the first-launch theme. isDark and
+          // the canvas colour are seeded so the first window paints black
+          // before the renderer has applied the theme file.
+          theme: 'pluto-purple-matrix',
+          themeIsDark: true,
+          themeBackgroundColor: '#000000',
           recent: {
             workspaces: [],
             documents: [],

@@ -364,7 +364,7 @@ export class TrayManager {
     if (this.tray) return;
     const icon = this.getIconForState('idle');
     this.tray = new Tray(icon);
-    this.tray.setToolTip('Nimbalyst');
+    this.tray.setToolTip('Pluto');
 
     // Where the panel is supported, the sessions live in it and the NSMenu is
     // reduced to app actions on right-click. Elsewhere `rebuildMenu` installs
